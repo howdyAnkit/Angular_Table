@@ -1,0 +1,35 @@
+<div class="email" ng-repeat="program in programs">
+    <table class="table" ng-init="RateTotal=0">
+
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">FirstName</th>
+                <th scope="col">StudentName</th>
+                <th scope="col">RollNumber</th>
+                <th scope="col">getTotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <th scope="row">1</th>
+                <td style="font-weight: 20px; color: red;">{{program.name | orderBy: name}}</td>
+                <td style="font-weight: 20px; color: red;">{{program.rollNumber}}</td>
+                
+                <!-- <td
+                    ng-init="$parent.RateTotal= program.marks.Maths + program.marks.English + program.marks.Science">
+                    {{program.marks.Maths + program.marks.English + program.marks.Science}}
+                </td> -->
+                <td>{{ filtered|total:'age' }}</td>
+
+                <!-- <td style="font-weight: 20px; color: red;">{{program.marks.Maths}}</td>
+                    <td style="font-weight: 20px; color: red;">{{program.marks.English}}</td>
+                    <td style="font-weight: 20px; color: red;">{{program.marks.Science}}</td> -->
+
+
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>

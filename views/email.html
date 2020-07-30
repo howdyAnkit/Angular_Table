@@ -1,0 +1,50 @@
+<style>
+    input.ng-invalid.ng-dirty{border: 1px solid red;}
+</style>
+<form name="frm" ng-submit="">
+
+
+    <div>
+        <label for="">firstName</label>
+        <input type="firstName" name="firstName" ng-model="user.firstName" ng-pattern="/^[a-zA-Z\s]*$/" required
+            ng-minlength="5"
+            ng-maxlength="20" />
+        <span ng-show="frm.firstName.$dirty && frm.firstName.$error.required">Required</span>
+        <span ng-show="frm.firstName.$dirty && frm.firstName.$error.minlength">too short</span>
+        <span ng-show="frm.firstName.$dirty && frm.firstName.$error.maxlength">too long</span>
+    </div>
+
+    <div>
+         <label for="">Lastname</label>
+         <input type="Lastname" name="Lastname" ng-model="user.Lastname" ng-pattern="/^[a-zA-Z\s]*$/" required
+             ng-minlength="5" ng-maxlength="20" />
+         <span ng-show="frm.Lastname.$dirty && frm.Lastname.$error.required">Required</span>
+         <span ng-show="frm.Lastname.$dirty && frm.Lastname.$error.minlength">too short</span>
+         <span ng-show="frm.Lastname.$dirty && frm.Lastname.$error.maxlength">too long</span>
+    </div>
+
+    <div>
+         <label for="">Class</label>
+         <input type="Class" name="Class" ng-model="user.Class" [pattern]="'^[a-zA-Z0-9 \'\-]+$'"
+ required ng-minlength="5"
+             ng-maxlength="20" />
+         <span ng-show="frm.Class.$dirty && frm.Class.$error.required">Required</span>
+         <span ng-show="frm.Class.$dirty && frm.Class.$error.minlength">too short</span>
+         <span ng-show="frm.Class.$dirty && frm.Class.$error.maxlength">too long</span>
+    </div>
+
+    <div>
+        <label for="">Year of Passing</label>
+            <input type="number" ng-model="user.year" name="year" min="2017" > <br />
+            <span ng-if="frm.Class.$dirty && form.year.$error.min">Year should be at least greater than 2017</span>
+    </div>
+
+    <div>
+        <label for="">percentage of Marks</label>
+        <input type="percentage of Marks" name="user.percentage" ng-model="user.percentage"
+            ng-pattern="/^[0-9]{1,5}$/" required />
+        <span ng-show="frm.percentage of Marks.$dirty && frm.percentage of Marks.$error.required">Required</span>
+    </div>
+
+    <button ng-disabled="frm.$invalid && frm.$error">Log on</button>
+</form>
