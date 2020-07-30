@@ -13,14 +13,14 @@
             
             <tr>
                 <th scope="row">1</th>
-                <td style="font-weight: 20px; color: red;">{{program.name | orderBy: name}}</td>
+                <td style="font-weight: 20px; color: red;">{{program.name }}</td>
                 <td style="font-weight: 20px; color: red;">{{program.rollNumber}}</td>
                 
-                <!-- <td
+                <td
                     ng-init="$parent.RateTotal= program.marks.Maths + program.marks.English + program.marks.Science">
                     {{program.marks.Maths + program.marks.English + program.marks.Science}}
-                </td> -->
-                <td>{{ filtered|total:'age' }}</td>
+                </td>
+                
 
                 <!-- <td style="font-weight: 20px; color: red;">{{program.marks.Maths}}</td>
                     <td style="font-weight: 20px; color: red;">{{program.marks.English}}</td>

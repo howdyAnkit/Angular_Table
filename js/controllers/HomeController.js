@@ -32,16 +32,7 @@ app.controller('HomeController', ['$scope', 'emails', function ($scope, emails) 
             }
         ];
 
-        var myApp = angular.module('myApp', []);
-        myApp.filter('total', function () {
-            return function (input, property) {
-                var i = input.length;
-                var total = 0;
-                while (i--)
-                    total += input[i][property];
-                return total;
-            }
-        });
+
 
     });
 }]);
