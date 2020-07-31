@@ -12,36 +12,23 @@ app.config(function ($routeProvider) {
         })
         .otherwise({
             redirectTo: '/outbox'
-        })
+        }); 
 });
 
-myapp.controller('samplecontoller', function ($scope) {
-	$scope.model = {
-  	name:'',
-    lname:''
-  }
-  $scope.submitForm = function()
-	{
-  	alert('Success fully updated : ' + $scope.model.name +' '+$scope.model.lname);
-  }
+app.filter('capitalize', function () {
+    return function (token) {
+        return token.charAt(0).toUpperCase() + token.slice(1);
+    }
 });
-angular.module('sampleapp').directive('disableBtn',
-	function() {
-		return {
-			restrict : 'A',
-			link : function(scope, element, attrs) {
-				var $el = $(element);
-				var submitBtn = $el.find('button[type="submit"]');
-				var fName = attrs.name;
-				
-				scope.$watch(fName + '.$valid', function(val) {
-					if (val) {
-						submitBtn.removeAttr('disabled');
-					} else {
-						submitBtn.attr('disabled', 'disabled');
-					}
-				});
-			}
-		};
-	}
-);
+
+app.filter('sumColumn', function () {
+    return function (dataSet, columnToSum) {
+        let sum = 0;
+
+        for (let i = 0; i < dataSet.length; i++) {
+            sum += parseFloat(dataSet[i][columnToSum]) || 0;
+        }
+
+        return sum;
+    };
+})
