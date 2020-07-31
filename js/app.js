@@ -7,8 +7,8 @@ app.config(function ($routeProvider) {
             templateUrl: 'views/home.html'
         })
         .when('/register', {
-            controller: 'EmailController',
-            templateUrl: 'views/email.html'
+            
+            templateUrl: 'views/register.html'
         })
         .otherwise({
             redirectTo: '/outbox'
